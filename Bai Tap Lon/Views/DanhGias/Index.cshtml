@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Bai_Tap_Lon.Models.DanhGia>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Đánh Giá </h2>
+
+<p>
+    @Html.ActionLink("Thêm Mới ", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Danhgiachatluong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhanHoiKhachHang)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.Raw(item.Danhgiachatluong)
+        </td>
+        <td>
+            @Html.Raw(item.PhanHoiKhachHang)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Sosao }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Sosao }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Sosao })
+        </td>
+    </tr>
+}
+
+</table>

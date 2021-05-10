@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/ckeditor")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Thông Tin", "Index", "ThongTinKhachHangs")</li>
+                    <li>@Html.ActionLink("San Pham", "Index", "SanPhams")</li>
+                    <li>@Html.ActionLink("Danh Muc San Pham", "Index", "DanhMucSanPhams")</li>
+                    <li>@Html.ActionLink("Danh Gia ", "Index", "Danhgias")</li>
+                    <li>@Html.ActionLink("Chi Nhanh Cua Hang  ", "Index", "ChiNhanhCuaHangs")</li>
+                    <li>@Html.ActionLink("Dang Ki  ", "Register", "usders")</li>
+                    <li>@Html.ActionLink("Dang Nhap  ", "Login", "usders")</li>
+                    <li>@Html.ActionLink("Dang Xuat  ", "SignOut", "usders")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; Bài Tập Lớn Phát Triển Phần Mềm Quản Lý  - Đỗ Văn Thắng - Vũ Hiền Linh </p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
